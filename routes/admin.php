@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Livewire\Admin\AddStudent;
 use App\Http\Livewire\Admin\AddTeacher;
 use App\Http\Livewire\Admin\AdminTeacherProfile;
 use App\Http\Livewire\Admin\Dashboard;
@@ -15,4 +16,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/addteacher', AddTeacher::class)->name('admin.addTeacher');
     Route::get('/teacherprofile/{id}', AdminTeacherProfile::class)->name('admin.teacherProfile');
     Route::get('/editteacher/{id}', TeacherEdit::class)->name('admin.editTeacher');
+    // Route::get('/studentlist', StudentList::class)->name('admin.studentList');
+    Route::get('/addstudent', AddStudent::class)->name('admin.addStudent');
 });

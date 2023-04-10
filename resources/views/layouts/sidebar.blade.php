@@ -26,7 +26,7 @@
                         <a class="nav-link" href="./listStudent.html">Student List</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="addStudent.html">Student Add</a>
+                        <a class="nav-link" href="{{ route('admin.addStudent') }}">Student Add</a>
                     </li>
                 </ul>
             </li>
