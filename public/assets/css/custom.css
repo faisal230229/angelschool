@@ -1,0 +1,203 @@
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3VzdG9tLmNzcyIsInNvdXJjZXMiOlsiY3VzdG9tLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiJ9 */
+
+/*# sourceMappingURL=custom.css.map */
+
+.brand-name {
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  font-size: 23px;
+  vertical-align: bottom;
+  color: #6777ef;
+}
+
+@media only screen and (max-width: 480px) {
+  .brand-name {
+    font-weight: 900;
+    font-size: 8px;
+  }
+}
+
+.student-fee-info input {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  outline: none;
+}
+
+.brown-progress-bar {
+  height: 20px;
+  width: 100%;
+  background-color: #eceaea;
+  border-radius: 10px;
+  position: relative;
+}
+
+.green-progress-bar {
+  height: 100%;
+  width: 83%;
+  position: absolute;
+  background-color: #6777ef;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.progress-perc {
+  font-size: 14px;
+}
+
+.red {
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.green {
+  height: 10px;
+  width: 10px;
+  background-color: #1bbc9b;
+  border-radius: 50%;
+}
+
+.yellow {
+  height: 10px;
+  width: 10px;
+  background-color: #fe9701;
+  border-radius: 50%;
+}
+
+.blue {
+  height: 10px;
+  width: 10px;
+  background-color: #4eb7c8;
+  border-radius: 50%;
+}
+
+.pink {
+  height: 10px;
+  width: 10px;
+  background-color: pink;
+  border-radius: 50%;
+}
+
+.purple {
+  height: 10px;
+  width: 10px;
+  background-color: #9b59b6;
+  border-radius: 50%;
+}
+
+.brown {
+  height: 10px;
+  width: 10px;
+  background-color: #f3565d;
+  border-radius: 50%;
+}
+.share-icon {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.teacher-dash .card {
+  transition: 0.5s;
+}
+
+.teacher-dash .card:hover {
+  transform: scale(1.1);
+}
+
+.sky {
+  height: 5px;
+  width: 5px;
+  background-color: #f3565d;
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.blue-text {
+  color: #094496 !important;
+  font-weight: 900;
+}
+/* 
+.p-flag {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-flag img {
+  height: 180px;
+  width: 300px;
+  opacity: 0.3;
+} */
+
+.student-card-body {
+  border-radius: 20px !important;
+}
+
+.st-card {
+  background-image: url("/assets/img/flag.png");
+  background-position: 120px;
+  height: 180px;
+  background-size: 230px;
+  background-repeat: no-repeat;
+}
+
+.footer-blue-color {
+  background-color: #094496;
+}
+
+.student-pic {
+  border: 3px solid #000;
+}
+
+.teacher-pic {
+  height: 100px;
+  width: 100px;
+  border: 4px solid #000;
+}
+
+.teacher-pic img {
+  height: 100%;
+  width: 100%;
+}
+
+.blue-radius {
+  /* background: rgb(18, 66, 106);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 66, 106, 1) 0%,
+    rgba(22, 209, 209, 1) 99%
+  ); */
+  background: linear-gradient(90deg, #4477a1 0%, #092633 100%);
+  height: 300px;
+  width: 100%;
+  border-radius: 270px 0px 0px 0px;
+}
+
+.employee-info {
+  background-image: url("/assets/img/Bupe.jpg");
+}
+
+.card-logo img {
+  height: 120px !important;
+  width: 120px !important;
+  margin-top: -20px;
+}
+.login-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-logo img {
+  height: 60px;
+  width: 60px;
+}
+@media (max-width: 767.98px) {
+  .btn-student-id-card {
+    display: none;
+  }
+}
