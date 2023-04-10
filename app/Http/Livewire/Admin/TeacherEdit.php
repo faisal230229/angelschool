@@ -43,12 +43,17 @@ class TeacherEdit extends Component
     protected $rules = [
         'name' => 'required',
         'email' => 'required|email',
-        'cnic' => 'required',
+        'cnic' => 'required|numeric',
         'dob' => 'required',
         'phone' => 'required',
         'qualification' => 'required',
         'address' => 'required',
     ];
+
+    public function updated($fields)
+    {
+        $this->validateOnly($fields);
+    }
 
     public function clear()
     {

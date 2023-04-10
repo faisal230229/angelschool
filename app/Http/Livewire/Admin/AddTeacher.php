@@ -29,15 +29,20 @@ class AddTeacher extends Component
     protected $rules = [
         'name' => 'required',
         'email' => 'required|email',
-        'cnic' => 'required',
+        'cnic' => 'required|numeric',
         'image' => 'required',
         'dob' => 'required',
         'phone' => 'required',
         'qualification' => 'required',
         'address' => 'required',
-        'password' => ['required'],
-        'password_confirmation' => ['required'],
+        'password' => 'required|min:8',
+        'password_confirmation' => 'required|min:8|required_with:password|same:password',
     ];
+
+    public function updated($fields)
+    {
+        $this->validateOnly($fields);
+    }
 
     public function clear()
     {

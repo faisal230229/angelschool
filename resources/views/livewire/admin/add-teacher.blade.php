@@ -16,15 +16,18 @@
                 <div class="form-group">
                   <label> Name</label>
                   <input type="text" class="form-control" wire:model="name" required />
+                  @error('name') <span class="text-danger error">{{ $message }}</span> @enderror
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label>Date Of Birth</label>
                     <input type="date" class="form-control" required wire:model="dob" />
+                    @error('dob') <span class="text-danger error">{{ $message }}</span> @enderror
                   </div>
                   <div class="form-group col-md-6">
                     <label>Contact Number</label>
                     <input type="text" class="form-control" required wire:model="phone" />
+                    @error('phone') <span class="text-danger error">{{ $message }}</span> @enderror
                   </div>
                 </div>
 
@@ -32,21 +35,25 @@
                   <div class="form-group col-md-6">
                     <label>Email</label>
                     <input type="email" class="form-control" required wire:model="email" />
+                    @error('email') <span class="text-danger error">{{ $message }}</span> @enderror
                   </div>
                   <div class="form-group col-md-6">
                     <label>Education Qualification</label>
                     <input type="text" class="form-control" required wire:model="qualification" />
+                    @error('qualification') <span class="text-danger error">{{ $message }}</span> @enderror
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label>Cnic</label>
                   <input type="number" class="form-control" required wire:model="cnic" />
+                  @error('cnic') <span class="text-danger error">{{ $message }}</span> @enderror
                 </div>
 
                 <div class="form-group">
                   <label>Address</label>
                   <textarea class="form-control" required wire:model="address"></textarea>
+                  @error('address') <span class="text-danger error">{{ $message }}</span> @enderror
                 </div>
 
                 <div class="form-row">
@@ -72,10 +79,12 @@
                   <div class="form-group col-md-6">
                     <label>Password</label>
                     <input type="password" class="form-control" required wire:model="password" />
+                    @error('password') <span class="text-danger error">{{ $message }}</span> @enderror
                   </div>
                   <div class="form-group col-md-6">
                     <label>Confirm Password</label>
                     <input type="password" class="form-control" required wire:model="password_confirmation" />
+                    @error('password_confirmation') <span class="text-danger error">{{ $message }}</span> @enderror
                   </div>
                 </div>
 
@@ -83,6 +92,7 @@
                   <div class="form-group col-md-10">
                     <label>Profile</label>
                     <input type="file" class="form-control" required wire:model="image" />
+                    @error('image') <span class="text-danger error">{{ $message }}</span> @enderror
                   </div>
                   <div class="form-group col-md-2">
                     <span class="">
