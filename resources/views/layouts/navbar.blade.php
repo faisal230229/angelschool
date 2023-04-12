@@ -29,7 +29,7 @@
         </ul>
     </div>
     <div class="mx-auto">
-        <span class="brand-name">The Angle School System</span>
+        <span class="brand-name">The Angels School System</span>
     </div>
     <ul class="navbar-nav navbar-right">
         <li class="dropdown">
@@ -41,19 +41,21 @@
                 <a href="profile.html" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>
-                <a href="timeline.html" class="dropdown-item has-icon">
+                {{-- <a href="timeline.html" class="dropdown-item has-icon">
                     <i class="fas fa-bolt"></i>
                     Activities
                 </a>
                 <a href="./profile.html" class="dropdown-item has-icon">
                     <i class="fas fa-cog"></i>
                     Settings
-                </a>
+                </a> --}}
                 <div class="dropdown-divider"></div>
-                <a href="./login.html" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i>
-                    Logout
-                </a>
+                <form action="{{ route('logout') }}" method="POST">
+                    <button type="submit" class="dropdown-item has-icon text-danger">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </button>
+                </form>
             </div>
         </li>
     </ul>

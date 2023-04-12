@@ -3,7 +3,7 @@
         <div class="section-body">
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
-                    <a href="./listTeacher.html" class="text-decoration-none teacher-dash">
+                    <a href="{{ route('admin.teacherList') }}" class="text-decoration-none teacher-dash">
                         <div class="card card-primary">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
@@ -20,7 +20,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
-                    <a href="./listStudent.html" class="text-decoration-none teacher-dash">
+                    <a href="{{ route('admin.studentList') }}" class="text-decoration-none teacher-dash">
                         <div class="card card-danger">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">

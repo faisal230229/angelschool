@@ -66,7 +66,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label>Select Religion</label>
-                    <select class="form-control">
+                    <select class="form-control" required wire:model="religion">
                       <option value="Islam" selected>Islam</option>
                       <option value="Hindu">Hindu</option>
                       <option value="Christian">Christian</option>

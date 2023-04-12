@@ -28,7 +28,7 @@ class AddTeacher extends Component
 
     protected $rules = [
         'name' => 'required',
-        'email' => 'required|email',
+        'email' => 'required|email|unique:users',
         'cnic' => 'required|numeric',
         'image' => 'required',
         'dob' => 'required',

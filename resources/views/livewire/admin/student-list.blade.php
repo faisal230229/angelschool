@@ -4,21 +4,22 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <h4 class="brand-name text-center pt-4">
-                            Welcome to the ANGELS School System Teachers List
-                        </h4>
                         <div class="card-header">
-                            <h4 class="py-3">All Teachers</h4>
+                            <h4 class="py-3">All Students</h4>
                         </div>
-                        <div class="search-box ">
-                            <div class="row mx-2 ">
+
+                        <h4 class="brand-name text-center py-3">
+                            Welcome to the ANGELS School System Students List
+                        </h4>
+                        <div class="search-box">
+                            <div class="row mx-2">
                                 <div class="col-12 d-flex justify-content-end align-items-center">
                                     <div class="form-group d-flex">
                                         <div>
                                             <h6 class="mt-2 mx-2">Search :</h6>
                                         </div>
                                         <div>
-                                            <input type="search" wire:model="search" class="form-control">
+                                            <input type="text" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -29,39 +30,39 @@
                                 <table class="table table-striped table-hover" id="tableExport" style="width: 100%">
                                     <thead>
                                         <tr>
-                                            <th>Teacher Name</th>
-                                            <th>Email</th>
+                                            <th>Student ID</th>
+                                            <th>Name</th>
+                                            <th>Father's Name</th>
+                                            <th>Class</th>
                                             <th>Contact Number</th>
-                                            <th>CNIC Number</th>
-                                            <th>Class Teacher</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($teachers as $teacher)
+                                        @foreach ($students as $student)
                                         <tr>
-                                            <td>{{ $teacher->name }}</td>
-                                            <td>{{ $teacher->email }}</td>
-                                            <td>{{ $teacher->phone }}</td>
-                                            <td>{{ $teacher->cnic }}</td>
-                                            <td>{{ $teacher->class_teacher }}</td>
+                                            <td>{{ $student->id }}</td>
+                                            <td>{{ $student->name }}</td>
+                                            <td>{{ $student->father_name }}</td>
+                                            <td>{{ $student->class_id }}</td>
+                                            <td>{{ $student->phone }}</td>
                                             <td>
-                                                <a href="{{ route('admin.teacherProfile', ['id' => $teacher->id]) }}"
+                                                <a href="./studentProfile.html"
                                                     class="btn btn-icon btn-outline-success"><i class="far fa-eye"></i>
                                                 </a>
-                                                <a href="{{ route('admin.editTeacher', ['id'=>$teacher->id]) }}"
-                                                    class="btn btn-icon btn-outline-primary"><i
+
+                                                <a href="./editStudent.html" class="btn btn-icon btn-outline-primary"><i
                                                         class="far fa-edit"></i></a>
-                                                <button type="button" wire:click.prevent="setTeacher({{$teacher->id}})"
-                                                    class="btn btn-icon btn-outline-danger" data-toggle="modal"
-                                                    data-target="#basicModal"><i class="fas fa-times"></i></button>
+                                                <!-- Delete Button -->
+
+                                                <a href="#" class="btn btn-icon btn-outline-danger" data-toggle="modal"
+                                                    data-target="#basicModal"><i class="fas fa-times"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-
-                                {{ $teachers->links() }}
+                                {{ $students->links() }}
                                 {{-- <div class="d-flex justify-content-md-end">
                                     <nav aria-label="Page navigation example mx-3">
                                         <ul class="pagination">
@@ -83,16 +84,12 @@
                                         </ul>
                                     </nav>
                                 </div> --}}
-
-                                <!-- Print & Share Buttons -->
-
                                 <div class="d-flex justify-content-end my-2">
                                     <a href="#"
-                                        class="btn btn-icon icon-left btn-outline-success   d-flex align-items-center gap-1">
+                                        class="btn btn-icon icon-left btn-outline-success d-flex align-items-center">
                                         <ion-icon name="print-outline" class="share-icon"></ion-icon>
                                         Print
                                     </a>
-
                                 </div>
                             </div>
                         </div>
@@ -101,33 +98,4 @@
             </div>
         </div>
     </section>
-    <div class="modal fade" wire:ignore.self id="basicModal" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLabel" style="display: none" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        Delete Teacher
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Are you sure you want to delete this <b>Teacher</b>
-                </div>
-                <div class="modal-footer bg-whitesmoke br">
-                    <button type="button" class="btn btn-outline-dark d-flex align-items-center" data-dismiss="modal">
-                        <ion-icon name="close-outline" class="share-icon"></ion-icon>
-                        Close
-                    </button>
-                    <button type="button" wire:click.prevent="deleteTeacher"
-                        class="btn btn-danger d-flex align-items-center">
-                        <ion-icon name="trash-bin-outline" class="share-icon"></ion-icon>
-                        Delete
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>

@@ -23,7 +23,7 @@
                         data-feather="user"></i><span>Students</span></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link" href="./listStudent.html">Student List</a>
+                        <a class="nav-link" href="{{ route('admin.studentList') }}">Student List</a>
                     </li>
                     <li>
                         <a class="nav-link" href="{{ route('admin.addStudent') }}">Student Add</a>
