@@ -6,10 +6,12 @@
                     <div class="card author-box">
                         <div class="card-body">
                             <div class="author-box-center">
+                                <div class="profile-picture">
                                 <img alt="image" src="{{ asset($teacher->image) }}"
-                                    class="rounded-circle author-box-picture" />
+                                    class="rounded-circle author-box-picture  " />
+                                    </div>
                                 <div class="clearfix"></div>
-                                <div class="author-box-name">
+                                <div class="author-box-name mt-2">
                                     <a href="#">{{ $teacher->name }}</a>
                                 </div>
                                 <div class="author-box-job">Principal</div>
