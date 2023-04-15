@@ -42,10 +42,10 @@ class TeacherEdit extends Component
 
     protected $rules = [
         'name' => 'required',
-        'email' => 'required|email',
-        'cnic' => 'required|numeric',
+        'email' => 'required|email|unique:users',
+        'cnic' => 'required|numeric|digits:13',
         'dob' => 'required',
-        'phone' => 'required',
+        'phone' => 'required|numeric|digits:11',
         'qualification' => 'required',
         'address' => 'required',
     ];

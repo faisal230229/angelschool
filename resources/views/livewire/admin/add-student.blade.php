@@ -176,7 +176,7 @@
                 <button class="btn btn-primary mr-1" id="swal-2" type="submit">
                   Submit
                 </button>
-                <button class="btn btn-secondary" type="reset">
+                <button class="btn btn-secondary" type="button" wire:click.prevent="clear">
                   Reset
                 </button>
               </div>

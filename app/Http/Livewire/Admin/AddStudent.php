@@ -63,6 +63,33 @@ class AddStudent extends Component
         $this->validateOnly($fields);
     }
 
+    public function clear()
+    {
+        $this->name = '';
+        $this->email = '';
+        $this->cnic = '';
+        $this->dob = '';
+        $this->phone = '';
+        $this->image = '';
+        $this->father_name = '';
+        $this->mother_name = '';
+        $this->father_education = '';
+        $this->mother_education = '';
+        $this->father_cnic = '';
+        $this->father_phone = '';
+        $this->address = '';
+        $this->guardian_name = '';
+        $this->guardian_occupation = '';
+        $this->guardian_cnic = '';
+        $this->guardian_phone = '';
+        $this->guardian_address = '';
+        $this->nationality = '';
+        $this->religion = '';
+        $this->session = '';
+        $this->admission_class = '';
+        $this->last_school = '';
+    }
+
     public function addStudent()
     {
         $this->validate();

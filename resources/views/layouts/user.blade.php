@@ -69,6 +69,29 @@
             icon: event.detail.type,
             });
         });
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top',
+            showConfirmButton: false,
+            showCloseButton: true,
+            timer: 5000,
+            timerProgressBar:true,
+            color: '#6777ef',
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+
+
+        window.addEventListener('timeAlert', event => { 
+            Toast.fire({
+            title: event.detail.message,
+            // text: event.detail.text,
+            icon: event.detail.type,
+            });
+        });
     </script>
 </body>
 <!-- index.html  21 Nov 2019 03:47:04 GMT -->

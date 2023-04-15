@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -14,9 +15,18 @@ class TeacherList extends Component
     public string $search = '';
     public $teacher_id;
 
+
     public function setTeacher($id)
     {
         $this->teacher_id = $id;
+    }
+
+    public function showToast($msg)
+    {
+        $this->dispatchBrowserEvent('timeAlert', [
+            'type' => 'success',
+            'message' => $msg,
+        ]);
     }
 
     public function deleteTeacher()

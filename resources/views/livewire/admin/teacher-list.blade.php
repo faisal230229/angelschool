@@ -1,4 +1,7 @@
 <div class="main-content">
+    @if (Session::has('msg'))
+    <p style="display:none" wire:init="showToast('{{ Session::get('msg') }}')"></p>
+    @endif
     <section class="section">
         <div class="section-body">
             <div class="row">

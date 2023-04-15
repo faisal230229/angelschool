@@ -1,4 +1,7 @@
 <div class="main-content">
+    @if (Session::has('msg'))
+    <p style="display:none" wire:init="showToast('{{ Session::get('msg') }}')"></p>
+    @endif
     <section class="section">
         <div class="section-body">
             <div class="row">
@@ -54,10 +57,9 @@
                                                 <a href="{{ route('admin.editStudent', ['id'=>$student->id]) }}"
                                                     class="btn btn-icon btn-outline-primary"><i
                                                         class="far fa-edit"></i></a>
-                                                <!-- Delete Button -->
-
-                                                <a href="#" class="btn btn-icon btn-outline-danger" data-toggle="modal"
-                                                    data-target="#basicModal"><i class="fas fa-times"></i></a>
+                                                <button type="button" wire:click.prevent="setStudent({{$student->id}})"
+                                                    class="btn btn-icon btn-outline-danger" data-toggle="modal"
+                                                    data-target="#basicModal"><i class="fas fa-times"></i></button>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -99,4 +101,33 @@
             </div>
         </div>
     </section>
+    <div class="modal fade" wire:ignore.self id="basicModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" style="display: none" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Delete Student
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this <b>Student</b>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-outline-dark d-flex align-items-center" data-dismiss="modal">
+                        <ion-icon name="close-outline" class="share-icon"></ion-icon>
+                        Close
+                    </button>
+                    <button type="button" wire:click.prevent="deleteStudent" data-dismiss="modal"
+                        class="btn btn-danger d-flex align-items-center">
+                        <ion-icon name="trash-bin-outline" class="share-icon"></ion-icon>
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

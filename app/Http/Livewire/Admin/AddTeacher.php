@@ -29,10 +29,10 @@ class AddTeacher extends Component
     protected $rules = [
         'name' => 'required',
         'email' => 'required|email|unique:users',
-        'cnic' => 'required|numeric',
+        'cnic' => 'required|numeric|digits:13',
         'image' => 'required',
         'dob' => 'required',
-        'phone' => 'required',
+        'phone' => 'required|numeric|digits:11',
         'qualification' => 'required',
         'address' => 'required',
         'password' => 'required|min:8',
@@ -61,7 +61,6 @@ class AddTeacher extends Component
     public function addTeacher()
     {
         $this->validate();
-        // dd("hello");
 
         $teacher = new User();
         $teacher->name = $this->name;
@@ -80,11 +79,6 @@ class AddTeacher extends Component
         $teacher->religion = $this->religion;
         $teacher->password = Hash::make($this->password);
         $teacher->save();
-
-        $this->dispatchBrowserEvent('alert', [
-            'type' => 'success',
-            'message' => 'Teacher Added Successfully!',
-        ]);
 
         return redirect()->route('admin.teacherList')->with('msg', 'Teacher Added Successfully');
     }
