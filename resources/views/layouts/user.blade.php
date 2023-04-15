@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/logo.png') }}" />
     <link rel="stylesheet" href="[path/to/css/feathericon.min.css) }}" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     @livewireStyles
 
 </head>
@@ -56,7 +58,18 @@
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
     <!-- Custom JS File -->
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+
     @livewireScripts
+
+    <script>
+        window.addEventListener('alert', event => { 
+            Swal.fire({
+            title: event.detail.message,
+            // text: event.detail.text,
+            icon: event.detail.type,
+            });
+        });
+    </script>
 </body>
 <!-- index.html  21 Nov 2019 03:47:04 GMT -->
 

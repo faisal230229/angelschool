@@ -81,6 +81,11 @@ class AddTeacher extends Component
         $teacher->password = Hash::make($this->password);
         $teacher->save();
 
+        $this->dispatchBrowserEvent('alert', [
+            'type' => 'success',
+            'message' => 'Teacher Added Successfully!',
+        ]);
+
         return redirect()->route('admin.teacherList')->with('msg', 'Teacher Added Successfully');
     }
 

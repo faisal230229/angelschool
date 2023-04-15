@@ -9,6 +9,11 @@ use Livewire\WithPagination;
 class StudentList extends Component
 {
     use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
+    public string $search = '';
+    public $teacher_id;
+
     public function render()
     {
         $students = Student::paginate(10);

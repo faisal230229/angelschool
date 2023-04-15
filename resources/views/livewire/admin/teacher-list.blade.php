@@ -121,7 +121,7 @@
                         <ion-icon name="close-outline" class="share-icon"></ion-icon>
                         Close
                     </button>
-                    <button type="button" wire:click.prevent="deleteTeacher"
+                    <button type="button" wire:click.prevent="deleteTeacher" data-dismiss="modal"
                         class="btn btn-danger d-flex align-items-center">
                         <ion-icon name="trash-bin-outline" class="share-icon"></ion-icon>
                         Delete

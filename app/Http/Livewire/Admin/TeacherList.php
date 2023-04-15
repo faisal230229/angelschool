@@ -21,15 +21,24 @@ class TeacherList extends Component
 
     public function deleteTeacher()
     {
-        dd($this->teacher_id);
+        $teacher = User::where('id', $this->teacher_id)->first();
+        // unlink(public_path($teacher->image));
+        $teacher->delete();
+
+        $this->dispatchBrowserEvent('alert', [
+            'type' => 'success',
+            'message' => 'Teacher Deleted Successfully!',
+        ]);
     }
 
     public function render()
     {
         $teachers = User::select('users.*')
             ->when(trim($this->search), function ($q) {
-                $search = '%' . $this->search . '%';
-                return $q->where('users.email', 'like', $search)->orwhere('users.name', 'like', $search)->orwhere('users.phone', 'like', $search);
+                $search = '%' . trim($this->search) . '%';
+                return $q->where(function ($q) use ($search) {
+                    return $q->where('users.email', 'like', $search)->orwhere('users.name', 'like', $search)->orwhere('users.phone', 'like', $search);
+                });
             })
             ->where('type', 'teacher')
             ->paginate(10);

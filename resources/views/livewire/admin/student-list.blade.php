@@ -19,7 +19,7 @@
                                             <h6 class="mt-2 mx-2">Search :</h6>
                                         </div>
                                         <div>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" wire:model="search" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -47,11 +47,12 @@
                                             <td>{{ $student->class_id }}</td>
                                             <td>{{ $student->phone }}</td>
                                             <td>
-                                                <a href="./studentProfile.html"
+                                                <a href="{{ route('admin.studentProfile', ['id'=>$student->id]) }}"
                                                     class="btn btn-icon btn-outline-success"><i class="far fa-eye"></i>
                                                 </a>
 
-                                                <a href="./editStudent.html" class="btn btn-icon btn-outline-primary"><i
+                                                <a href="{{ route('admin.editStudent', ['id'=>$student->id]) }}"
+                                                    class="btn btn-icon btn-outline-primary"><i
                                                         class="far fa-edit"></i></a>
                                                 <!-- Delete Button -->
 
