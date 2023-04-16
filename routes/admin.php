@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Livewire\Admin\AddClass;
 use App\Http\Livewire\Admin\AddStudent;
 use App\Http\Livewire\Admin\AddTeacher;
 use App\Http\Livewire\Admin\AdminStudentProfile;
 use App\Http\Livewire\Admin\AdminTeacherProfile;
+use App\Http\Livewire\Admin\ClassEdit;
+use App\Http\Livewire\Admin\ClassesList;
 use App\Http\Livewire\Admin\Dashboard;
 use App\Http\Livewire\Admin\StudentEdit;
 use App\Http\Livewire\Admin\StudentList;
@@ -24,4 +27,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/addstudent', AddStudent::class)->name('admin.addStudent');
     Route::get('/studentprofile/{id}', AdminStudentProfile::class)->name('admin.studentProfile');
     Route::get('/editstudent/{id}', StudentEdit::class)->name('admin.editStudent');
+
+    Route::get('/classeslist', ClassesList::class)->name('admin.classesList');
+    Route::get('/addclass', AddClass::class)->name('admin.addClass');
+    Route::get('/editclass/{id}', ClassEdit::class)->name('admin.editClass');
 });

@@ -7,21 +7,22 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <h4 class="brand-name text-center pt-4">
-                            Welcome to the ANGELS School System Teachers List
-                        </h4>
                         <div class="card-header">
-                            <h4 class="py-3">All Teachers</h4>
+                            <h4 class="py-3">All Classes</h4>
                         </div>
-                        <div class="search-box ">
-                            <div class="row mx-2 ">
+
+                        <h4 class="brand-name text-center py-3">
+                            Welcome to the ANGELS School System Students List
+                        </h4>
+                        <div class="search-box">
+                            <div class="row mx-2">
                                 <div class="col-12 d-flex justify-content-end align-items-center">
                                     <div class="form-group d-flex">
                                         <div>
                                             <h6 class="mt-2 mx-2">Search :</h6>
                                         </div>
                                         <div>
-                                            <input type="search" wire:model="search" class="form-control">
+                                            <input type="text" wire:model="search" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -32,30 +33,24 @@
                                 <table class="table table-striped table-hover" id="tableExport" style="width: 100%">
                                     <thead>
                                         <tr>
-                                            <th>Teacher Name</th>
-                                            <th>Email</th>
-                                            <th>Contact Number</th>
-                                            <th>CNIC Number</th>
-                                            <th>Class Teacher</th>
+                                            <th>Class ID</th>
+                                            <th>Class Name</th>
+                                            <th>Class Teacher Name</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($teachers as $teacher)
+                                        @foreach ($classes as $class)
                                         <tr>
-                                            <td>{{ $teacher->name }}</td>
-                                            <td>{{ $teacher->email }}</td>
-                                            <td>{{ $teacher->phone }}</td>
-                                            <td>{{ $teacher->cnic }}</td>
-                                            <td>{{ $teacher->teacherClass->name }}</td>
+                                            <td>{{ $class->id }}</td>
+                                            <td>{{ $class->name }}</td>
+                                            <td>{{ $class->classTeacher ? $class->classTeacher->name : 'NILL' }}
+                                            </td>
                                             <td>
-                                                <a href="{{ route('admin.teacherProfile', ['id' => $teacher->id]) }}"
-                                                    class="btn btn-icon btn-outline-success"><i class="far fa-eye"></i>
-                                                </a>
-                                                <a href="{{ route('admin.editTeacher', ['id'=>$teacher->id]) }}"
+                                                <a href="{{ route('admin.editClass', ['id'=>$class->id]) }}"
                                                     class="btn btn-icon btn-outline-primary"><i
                                                         class="far fa-edit"></i></a>
-                                                <button type="button" wire:click.prevent="setTeacher({{$teacher->id}})"
+                                                <button type="button" wire:click.prevent="setClass({{$class->id}})"
                                                     class="btn btn-icon btn-outline-danger" data-toggle="modal"
                                                     data-target="#basicModal"><i class="fas fa-times"></i></button>
                                             </td>
@@ -63,8 +58,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-
-                                {{ $teachers->links() }}
+                                {{ $classes->links() }}
                                 {{-- <div class="d-flex justify-content-md-end">
                                     <nav aria-label="Page navigation example mx-3">
                                         <ul class="pagination">
@@ -86,16 +80,12 @@
                                         </ul>
                                     </nav>
                                 </div> --}}
-
-                                <!-- Print & Share Buttons -->
-
                                 <div class="d-flex justify-content-end my-2">
                                     <a href="#"
-                                        class="btn btn-icon icon-left btn-outline-success   d-flex align-items-center gap-1">
+                                        class="btn btn-icon icon-left btn-outline-success d-flex align-items-center">
                                         <ion-icon name="print-outline" class="share-icon"></ion-icon>
                                         Print
                                     </a>
-
                                 </div>
                             </div>
                         </div>
@@ -110,21 +100,21 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        Delete Teacher
+                        Delete Class
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete this <b>Teacher</b>
+                    Are you sure you want to delete this <b>Class</b>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-outline-dark d-flex align-items-center" data-dismiss="modal">
                         <ion-icon name="close-outline" class="share-icon"></ion-icon>
                         Close
                     </button>
-                    <button type="button" wire:click.prevent="deleteTeacher" data-dismiss="modal"
+                    <button type="button" wire:click.prevent="deleteClass" data-dismiss="modal"
                         class="btn btn-danger d-flex align-items-center">
                         <ion-icon name="trash-bin-outline" class="share-icon"></ion-icon>
                         Delete

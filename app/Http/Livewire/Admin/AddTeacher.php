@@ -56,6 +56,8 @@ class AddTeacher extends Component
         $this->address = '';
         $this->password = '';
         $this->password_confirmation = '';
+        $this->nationality = 'Pakistani';
+        $this->religion = 'Islam';
     }
 
     public function addTeacher()

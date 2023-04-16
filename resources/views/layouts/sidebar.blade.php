@@ -46,6 +46,21 @@
                 </ul>
             </li>
 
+            <!------------------------------------- Classes Management System ------------------------------>
+
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                        data-feather="user"></i><span>Classes</span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('admin.classesList') }}">Classes List</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('admin.addClass') }}">Class Add</a>
+                    </li>
+                </ul>
+            </li>
+
             <!------------------------------------- Attendence Management System --------------------------->
 
             <li class="menu-header">Attendence</li>

@@ -20,8 +20,8 @@ class TeacherEdit extends Component
     public $phone;
     public $qualification;
     public $address;
-    public $nationality;
-    public $religion;
+    public $nationality = 'Pakistani';
+    public $religion = 'Islam';
     public $newImage;
 
     public function mount($id)
@@ -65,6 +65,8 @@ class TeacherEdit extends Component
         $this->phone = '';
         $this->qualification = '';
         $this->address = '';
+        $this->nationality = 'Pakistani';
+        $this->religion = 'Islam';
     }
 
     public function editTeacher()
