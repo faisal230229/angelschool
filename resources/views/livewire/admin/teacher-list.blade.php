@@ -47,7 +47,8 @@
                                             <td>{{ $teacher->email }}</td>
                                             <td>{{ $teacher->phone }}</td>
                                             <td>{{ $teacher->cnic }}</td>
-                                            <td>{{ $teacher->teacherClass->name }}</td>
+                                            <td>{{ $teacher->teacherClass ? $teacher->teacherClass->name : 'NILL' }}
+                                            </td>
                                             <td>
                                                 <a href="{{ route('admin.teacherProfile', ['id' => $teacher->id]) }}"
                                                     class="btn btn-icon btn-outline-success"><i class="far fa-eye"></i>
