@@ -113,8 +113,8 @@ class StudentEdit extends Component
         $this->guardian_cnic = '';
         $this->guardian_phone = '';
         $this->guardian_address = '';
-        $this->nationality = '';
-        $this->religion = '';
+        $this->nationality = 'Pakistani';
+        $this->religion = 'Islam';
         $this->session = '';
         $this->admission_class = '';
         $this->last_school = '';
