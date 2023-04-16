@@ -45,7 +45,7 @@ class ClassEdit extends Component
         $class->class_teacher = $this->class_teacher;
         $class->save();
 
-        return redirect()->route('admin.classList')->with('msg', 'Class Updated Successfully');
+        return redirect()->route('admin.classesList')->with('msg', 'Class Updated Successfully');
     }
 
     public function render()

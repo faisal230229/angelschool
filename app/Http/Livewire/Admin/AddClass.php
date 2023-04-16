@@ -36,7 +36,7 @@ class AddClass extends Component
         $class->class_teacher = $this->class_teacher;
         $class->save();
 
-        return redirect()->route('admin.classList')->with('msg', 'Class Added Successfully');
+        return redirect()->route('admin.classesList')->with('msg', 'Class Added Successfully');
     }
 
     public function render()
