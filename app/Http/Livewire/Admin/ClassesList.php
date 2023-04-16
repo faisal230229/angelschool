@@ -19,6 +19,14 @@ class ClassesList extends Component
         $this->class_id = $id;
     }
 
+    public function showToast($msg)
+    {
+        $this->dispatchBrowserEvent('timeAlert', [
+            'type' => 'success',
+            'message' => $msg,
+        ]);
+    }
+
     public function deleteClass()
     {
         $class = SchoolClass::find($this->class_id);
