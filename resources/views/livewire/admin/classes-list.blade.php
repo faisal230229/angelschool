@@ -7,13 +7,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <h4 class="brand-name text-center py-3">
+                            Welcome to the ANGELS School System Students List
+                        </h4>
                         <div class="card-header">
                             <h4 class="py-3">All Classes</h4>
                         </div>
 
-                        <h4 class="brand-name text-center py-3">
-                            Welcome to the ANGELS School System Students List
-                        </h4>
                         <div class="search-box">
                             <div class="row mx-2">
                                 <div class="col-12 d-flex justify-content-end align-items-center">

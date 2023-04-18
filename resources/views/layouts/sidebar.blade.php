@@ -75,7 +75,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a class=" " href="./timetable.html"><i data-feather="grid"></i><span>Timetable</span></a>
+                <a href="{{ route('admin.timetable') }}"><i data-feather="grid"></i><span>Timetable</span></a>
             </li>
 
             <!------------------------------------- Fee Management System ---------------------------------->

@@ -3,6 +3,7 @@
 use App\Http\Livewire\Admin\AddClass;
 use App\Http\Livewire\Admin\AddStudent;
 use App\Http\Livewire\Admin\AddTeacher;
+use App\Http\Livewire\Admin\AddTimetable;
 use App\Http\Livewire\Admin\AdminStudentProfile;
 use App\Http\Livewire\Admin\AdminTeacherProfile;
 use App\Http\Livewire\Admin\ClassEdit;
@@ -12,6 +13,8 @@ use App\Http\Livewire\Admin\StudentEdit;
 use App\Http\Livewire\Admin\StudentList;
 use App\Http\Livewire\Admin\TeacherEdit;
 use App\Http\Livewire\Admin\TeacherList;
+use App\Http\Livewire\Admin\Timetable;
+use App\Http\Livewire\Admin\TimetableEdit;
 use Illuminate\Support\Facades\Route;
 
 
@@ -31,4 +34,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/classeslist', ClassesList::class)->name('admin.classesList');
     Route::get('/addclass', AddClass::class)->name('admin.addClass');
     Route::get('/editclass/{id}', ClassEdit::class)->name('admin.editClass');
+
+    Route::get('/timetable', Timetable::class)->name('admin.timetable');
+    Route::get('/addtimetable', AddTimetable::class)->name('admin.addTimetable');
+    Route::get('/edittimetable/{id}', TimetableEdit::class)->name('admin.editTimetable');
 });
