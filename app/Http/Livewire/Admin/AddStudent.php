@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\SchoolClass;
 use App\Models\Student;
 use Carbon\Carbon;
 use Livewire\Component;
@@ -131,6 +132,7 @@ class AddStudent extends Component
 
     public function render()
     {
-        return view('livewire.admin.add-student');
+        $classes = SchoolClass::all();
+        return view('livewire.admin.add-student', compact('classes'));
     }
 }

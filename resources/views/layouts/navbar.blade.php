@@ -51,7 +51,8 @@
                 </a> --}}
                 <div class="dropdown-divider"></div>
                 <form action="{{ route('logout') }}" method="POST">
-                    <button type="submit" class="dropdown-item has-icon text-danger">
+                    @csrf
+                    <button type="submit" class="dropdown-item has-icon text-danger d-flex align-items-center">
                         <i class="fas fa-sign-out-alt"></i>
                         Logout
                     </button>

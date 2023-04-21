@@ -145,7 +145,12 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label>Class In Which Admission Sought</label>
-                    <input type="text" class="form-control" wire:model='admission_class' />
+                    <select class="form-control" wire:model='admission_class' required>
+                      <option value="" selected>Select Class</option>
+                      @foreach ($classes as $class)
+                      <option value="{{ $class->id }}">{{ $class->name }}</option>
+                      @endforeach
+                    </select>
                     @error('admission_class') <span class="text-danger error">{{ $message }}</span> @enderror
                   </div>
                 </div>

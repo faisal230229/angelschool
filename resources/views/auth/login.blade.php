@@ -29,6 +29,7 @@
                                     </div>
                                     <input class="form-control" placeholder="Email" id="email" type="email" name="email"
                                         :value="old('email')" required autofocus autocomplete="username">
+                                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                 </div>
                             </div>
                             <div class=" form-group">
@@ -41,6 +42,7 @@
                                     </div>
                                     <input class="form-control" placeholder="Password" id="password" type="password"
                                         name="password" required autocomplete="current-password">
+                                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                 </div>
                             </div>
                             <div class="form-group mb-0">

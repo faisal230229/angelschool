@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\TeacherController;
+use App\Http\Livewire\Attendences;
+use App\Http\Livewire\ClassAttendence;
+use App\Http\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware(['auth', 'user-access:teacher'])->group(function () {
-    Route::get('/', [TeacherController::class, 'index'])->name('dashboard');
+    Route::get('/', Dashboard::class)->name('dashboard');
+    Route::get('/attendences', Attendences::class)->name('attendences');
+    Route::get('/classattendence/{id}', ClassAttendence::class)->name('classAttendence');
 });
 
 require __DIR__ . '/auth.php';

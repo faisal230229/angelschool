@@ -33,7 +33,11 @@
 
             <!------------------------------------------- Main Side bar ------------------------------------------>
 
+            @if (auth()->user()->type == 'admin')
             @include('layouts.sidebar')
+            @else
+            @include('layouts.teacherSidebar')
+            @endif
 
             <!-- Main Content -->
             {{-- @yield('content') --}}
