@@ -37,7 +37,7 @@ class ClassAttendence extends Component
         }
         StudentAttendence::insert($attendences);
         // DB::table('student_attendences')->insert($attendences);
-        dd('hello');
+        return redirect()->route('attendences')->with('msg', 'Attendence Submitted Successfully');
     }
 
     public function render()

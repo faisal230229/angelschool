@@ -69,7 +69,7 @@
                         Attendence</span></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link" href="./allClassesAttendence.html">
+                        <a class="nav-link" href="{{ route('admin.allClassesAttendence') }}">
                             All Classes</a>
                     </li>
                 </ul>

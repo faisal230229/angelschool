@@ -6,6 +6,7 @@ use App\Http\Livewire\Admin\AddTeacher;
 use App\Http\Livewire\Admin\AddTimetable;
 use App\Http\Livewire\Admin\AdminStudentProfile;
 use App\Http\Livewire\Admin\AdminTeacherProfile;
+use App\Http\Livewire\Admin\AllClassesAttendence;
 use App\Http\Livewire\Admin\ClassEdit;
 use App\Http\Livewire\Admin\ClassesList;
 use App\Http\Livewire\Admin\Dashboard;
@@ -38,4 +39,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/timetable', Timetable::class)->name('admin.timetable');
     Route::get('/addtimetable', AddTimetable::class)->name('admin.addTimetable');
     Route::get('/edittimetable/{id}', TimetableEdit::class)->name('admin.editTimetable');
+
+    Route::get('/allclassesattendence', AllClassesAttendence::class)->name('admin.allClassesAttendence');
 });

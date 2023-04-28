@@ -63,7 +63,7 @@
                                                 <td>75%</td>
                                                 <td></td>
                                                 <td>
-                                                    <select class="form-control btn-primary" style="width: max-content"
+                                                    <select class="form-control btn-success" style="width: max-content"
                                                         wire:change="setRecord('{{ $student->id }}',$event.target.value)"
                                                         required>
                                                         <option value="" selected>Choose Status</option>

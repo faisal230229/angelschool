@@ -9,6 +9,14 @@ use Livewire\Component;
 
 class Attendences extends Component
 {
+    public function showToast($msg)
+    {
+        $this->dispatchBrowserEvent('timeAlert', [
+            'type' => 'success',
+            'message' => $msg,
+        ]);
+    }
+
     public function render()
     {
         $classes = SchoolClass::where('class_teacher', Auth::user()->id)->get();

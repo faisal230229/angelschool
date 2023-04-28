@@ -1,7 +1,4 @@
 <div class="main-content">
-    @if (Session::has('msg'))
-    <p style="display:none" wire:init="showToast('{{ Session::get('msg') }}')"></p>
-    @endif
     <section class="section">
         <div class="section-body">
             <div class="row">
@@ -18,24 +15,24 @@
                             </div>
                         </div>
                         <div class="collapse show" id="mycard-collapse8">
-                            <a href="{{ $class->attendence()->where('status',
-                                'PRESENT')->whereDate('created_at', \Carbon\Carbon::today())->count() > 0 ? '#' : route('classAttendence', ['id'=> $class->id]) }}"
-                                class="text-decoration-none">
+                            <a href="./studentAttendence.html" class="text-decoration-none">
                                 <div class="card-body">
-                                    {{-- <div class="row">
+                                    <div class="row">
                                         <div class="col-7 col-md-4">
-                                            <h6 class="text-danger">Subject Name :</h6>
+                                            <h6 class="text-danger">Teacher Name :</h6>
                                         </div>
                                         <div class="col-5 col-md-6">
-                                            <h6 class="text-dark">Sir Mughees</h6>
+                                            <h6 class="text-dark">{{ $class->classTeacher ? $class->classTeacher->name :
+                                                "No Class Teacher" }}</h6>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     <div class="row">
                                         <div class="col-7 col-md-4">
                                             <h6 class="text-danger">Total Students :</h6>
                                         </div>
                                         <div class="col-5 col-md-6">
-                                            <h6 class="text-dark">{{ $class->students->count() }}</h6>
+                                            <h6 class="text-dark">{{ $class->students ? $class->students->count() : 0 }}
+                                            </h6>
                                         </div>
                                     </div>
                                     @if ($class->attendence()->where('status',
@@ -84,7 +81,8 @@
                                             <h6 class="text-danger">Status :</h6>
                                         </div>
                                         <div class="col-5 col-md-6">
-                                            <h6 class="text-dark">Today's Attendence not marked yet.
+                                            <h6 class="text-dark">
+                                                Today's Attendence not marked yet.
                                             </h6>
                                         </div>
                                     </div>
@@ -99,7 +97,6 @@
             <div class="row">
                 @endif
                 @endforeach
-
             </div>
         </div>
     </section>
