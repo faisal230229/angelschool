@@ -9,7 +9,7 @@
                                 <div class="d-flex justify-content-between">
                                     <div>
                                         <h5 class="text-dark">Teachers</h5>
-                                        <h5 class="text-dark">10+</h5>
+                                        <h5 class="text-dark">{{ $t_teachers }}</h5>
                                     </div>
                                     <div>
                                         <img src="./assets/img/teacher.png" alt="" class="img-fluid" />
@@ -26,7 +26,7 @@
                                 <div class="d-flex justify-content-between">
                                     <div>
                                         <h5 class="text-dark">Students</h5>
-                                        <h5 class="text-dark">200+</h5>
+                                        <h5 class="text-dark">{{ $t_students }}</h5>
                                     </div>
                                     <div>
                                         <img src="./assets/img/students.png" alt="" class="img-fluid" />
@@ -43,7 +43,7 @@
                                 <div class="d-flex justify-content-between">
                                     <div>
                                         <h5 class="text-dark">Classes</h5>
-                                        <h5 class="text-dark">10+</h5>
+                                        <h5 class="text-dark">{{ $t_classes }}</h5>
                                     </div>
                                     <div>
                                         <img src="./assets/img/school.png" alt="" class="img-fluid" />

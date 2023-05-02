@@ -16,8 +16,15 @@
                         </h4>
                         <div class="search-box">
                             <div class="row mx-2">
-                                <div class="col-12 d-flex justify-content-end align-items-center">
-                                    <div class="form-group d-flex">
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <a href="{{ route('admin.studentPdf') }}"
+                                            class="btn btn-icon icon-left btn-outline-success d-flex align-items-center">
+                                            <ion-icon name="print-outline" class="share-icon"></ion-icon>
+                                            Print
+                                        </a>
+                                    </div>
+                                    <div class=" d-flex">
                                         <div>
                                             <h6 class="mt-2 mx-2">Search :</h6>
                                         </div>
@@ -87,13 +94,7 @@
                                         </ul>
                                     </nav>
                                 </div> --}}
-                                <div class="d-flex justify-content-end my-2">
-                                    <a href="#"
-                                        class="btn btn-icon icon-left btn-outline-success d-flex align-items-center">
-                                        <ion-icon name="print-outline" class="share-icon"></ion-icon>
-                                        Print
-                                    </a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
