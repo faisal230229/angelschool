@@ -53,18 +53,7 @@
                                         {{ $teacher->email }}
                                     </span>
                                 </p>
-                                <p class="clearfix">
-                                    <span class="float-left"> Facebook </span>
-                                    <span class="float-right text-muted">
-                                        <a href="#">Mian Mughees Bhatti</a>
-                                    </span>
-                                </p>
-                                <p class="clearfix">
-                                    <span class="float-left"> Twitter </span>
-                                    <span class="float-right text-muted">
-                                        <a href="#">@mianmughees</a>
-                                    </span>
-                                </p>
+                             
                             </div>
                         </div>
                     </div>

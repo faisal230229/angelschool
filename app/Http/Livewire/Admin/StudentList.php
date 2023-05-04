@@ -30,7 +30,7 @@ class StudentList extends Component
     public function deleteStudent()
     {
         $student = Student::where('id', $this->student_id)->first();
-        unlink(public_path($student->image));
+        // unlink(public_path($student->image));
         $student->delete();
 
         $this->dispatchBrowserEvent('alert', [

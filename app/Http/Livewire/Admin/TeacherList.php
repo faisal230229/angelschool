@@ -32,7 +32,7 @@ class TeacherList extends Component
     public function deleteTeacher()
     {
         $teacher = User::where('id', $this->teacher_id)->first();
-        unlink(public_path($teacher->image));
+        // unlink(public_path($teacher->image));
         $teacher->delete();
 
         $this->dispatchBrowserEvent('alert', [
