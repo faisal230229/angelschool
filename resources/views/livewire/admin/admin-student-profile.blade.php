@@ -5,11 +5,13 @@
                 <div class="col-12 col-md-12 col-lg-4">
                     <div class="card author-box">
                         <div class="card-body">
-                            <div class="author-box-center">
-                                <img alt="image" src="{{ $student->image }}"
-                                    class="rounded-circle author-box-picture" />
+                        <div class="author-box-center">
+                                <div class="profile-picture">
+                                <img alt="image" src="{{ asset($student->image) }}"
+                                    class="rounded-circle author-box-picture  " />
+                                    </div>
                                 <div class="clearfix"></div>
-                                <div class="author-box-name pt-2">
+                                <div class="author-box-name mt-2">
                                     <a href="#">{{ $student->name }}</a>
                                 </div>
                                 <div class="author-box-job">Student</div>

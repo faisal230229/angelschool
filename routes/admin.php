@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PdfController;
 use App\Http\Livewire\Admin\AddClass;
 use App\Http\Livewire\Admin\AddStudent;
 use App\Http\Livewire\Admin\AddTeacher;
@@ -41,4 +42,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/edittimetable/{id}', TimetableEdit::class)->name('admin.editTimetable');
 
     Route::get('/allclassesattendence', AllClassesAttendence::class)->name('admin.allClassesAttendence');
+
+    Route::get('/studentPdf', [PdfController::class, 'studentPdf'])->name('admin.studentPdf');
+    Route::get('/teacherPdf', [PdfController::class, 'teacherPdf'])->name('admin.teacherPdf');
+    Route::get('/classesPdf', [PdfController::class, 'classesPdf'])->name('admin.classesPdf');
 });

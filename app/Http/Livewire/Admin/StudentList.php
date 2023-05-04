@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Student;
 use Livewire\Component;
 use Livewire\WithPagination;
+use PDF;
 
 class StudentList extends Component
 {
@@ -21,6 +22,7 @@ class StudentList extends Component
             'message' => $msg,
         ]);
     }
+
 
     public function setStudent($id)
     {

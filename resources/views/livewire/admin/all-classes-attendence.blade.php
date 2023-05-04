@@ -10,12 +10,12 @@
                                 <h4>Class {{ $class->name }}</h4>
                             </a>
                             <div class="card-header-action">
-                                <a data-collapse="#mycard-collapse8" class="btn btn-icon btn-outline-secondary"
-                                    href="#"><i class="fas fa-minus"></i></a>
+                                <a data-collapse="#mycard-collapse{{ $class->id }}"
+                                    class="btn btn-icon btn-outline-secondary" href="#"><i class="fas fa-minus"></i></a>
                             </div>
                         </div>
-                        <div class="collapse show" id="mycard-collapse8">
-                            <a href="./studentAttendence.html" class="text-decoration-none">
+                        <div class="collapse show" id="mycard-collapse{{ $class->id }}">
+                            <a class="text-decoration-none">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-7 col-md-4">
