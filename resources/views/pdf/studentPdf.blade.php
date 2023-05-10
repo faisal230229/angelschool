@@ -6,11 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student List</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 
 <body>
     <h1>THE ANGELS SCHOOL SYSTEM STUDENTS LIST</h1>
-    <table style="width: 100%">
+    <table>
         <thead>
             <tr>
                 <th>Student ID</th>
@@ -26,7 +38,7 @@
                 <td>{{ $student->id }}</td>
                 <td>{{ $student->name }}</td>
                 <td>{{ $student->father_name }}</td>
-                <td>{{ $student->class_id }}</td>
+                <td>{{ $student->class->name }}</td>
                 <td>{{ $student->phone }}</td>
 
             </tr>

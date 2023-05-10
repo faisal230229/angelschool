@@ -8,9 +8,11 @@ use App\Http\Livewire\Admin\AddTimetable;
 use App\Http\Livewire\Admin\AdminStudentProfile;
 use App\Http\Livewire\Admin\AdminTeacherProfile;
 use App\Http\Livewire\Admin\AllClassesAttendence;
+use App\Http\Livewire\Admin\AllFeesList;
 use App\Http\Livewire\Admin\ClassEdit;
 use App\Http\Livewire\Admin\ClassesList;
 use App\Http\Livewire\Admin\Dashboard;
+use App\Http\Livewire\Admin\GenerateFee;
 use App\Http\Livewire\Admin\StudentEdit;
 use App\Http\Livewire\Admin\StudentList;
 use App\Http\Livewire\Admin\TeacherEdit;
@@ -42,6 +44,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/edittimetable/{id}', TimetableEdit::class)->name('admin.editTimetable');
 
     Route::get('/allclassesattendence', AllClassesAttendence::class)->name('admin.allClassesAttendence');
+
+    Route::get('/feeslist', AllFeesList::class)->name('admin.feesList');
+    Route::get('/generateFee', GenerateFee::class)->name('admin.generateFee');
+    Route::get('/editgenerateFee/{id}', TimetableEdit::class)->name('admin.editGenerateFee');
 
     Route::get('/studentPdf', [PdfController::class, 'studentPdf'])->name('admin.studentPdf');
     Route::get('/teacherPdf', [PdfController::class, 'teacherPdf'])->name('admin.teacherPdf');
