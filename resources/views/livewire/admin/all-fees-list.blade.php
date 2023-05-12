@@ -65,8 +65,14 @@
                         </div>
                         <div class="search-box mt-3">
                             <div class="row mx-2">
-                                <div class="col-12 d-flex justify-content-end align-items-center">
-                                    <div class="form-group d-flex">
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <select wire:model="filter" class="form-control">
+                                            <option value="unpaid">Unpaid</option>
+                                            <option value="paid">Paid</option>
+                                        </select>
+                                    </div>
+                                    <div class="d-flex">
                                         <div>
                                             <h6 class="mt-2 mx-2">Search :</h6>
                                         </div>
@@ -84,16 +90,19 @@
                                         <tr>
                                             <th>Student Id</th>
                                             <th>Name</th>
-                                            <th>Arrears</th>
+                                            <th>Previous Arrears</th>
                                             <th class="text-center">Admission Fee</th>
                                             <th>Tution Fee</th>
                                             <th>Stationary</th>
                                             <th>Paper Fund</th>
                                             <th>Others</th>
                                             <th>Total</th>
+                                            @if ($filter == 'paid')
                                             <th>Received</th>
                                             <th>Arrears</th>
+                                            @else
                                             <th>Status</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -108,20 +117,18 @@
                                             <td>{{ $fee->paper_fund }}</td>
                                             <td>{{ $fee->others }}</td>
                                             <td>{{ $fee->total }}</td>
-                                            <td>2000</td>
-                                            <td>500</td>
+                                            @if ($filter == 'paid')
+                                            <td>{{ $fee->received }}</td>
+                                            <td>{{ $fee->arrears }}</td>
+                                            @else
                                             <td>
-                                                <div class="dropdown d-inline mr-2">
-                                                    <button class="btn btn-success dropdown-toggle" type="button"
-                                                        id="dropdownMenuButton" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Unpaid
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Paid</a>
-                                                    </div>
-                                                </div>
+                                                <form wire:submit.prevent="payFee({{ $fee->id }})" class="d-flex">
+                                                    <input type="number" class="form-control"
+                                                        wire:model="receive.{{ $fee->id }}">
+                                                    <button class="btn btn-success">Paid</button>
+                                                </form>
                                             </td>
+                                            @endif
                                         </tr>
                                         @endforeach
                                     </tbody>

@@ -52,4 +52,5 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/studentPdf', [PdfController::class, 'studentPdf'])->name('admin.studentPdf');
     Route::get('/teacherPdf', [PdfController::class, 'teacherPdf'])->name('admin.teacherPdf');
     Route::get('/classesPdf', [PdfController::class, 'classesPdf'])->name('admin.classesPdf');
+    Route::get('/teacherCardPdf/{id}', [PdfController::class, 'teacherCardPdf'])->name('admin.teacherCardPdf');
 });
