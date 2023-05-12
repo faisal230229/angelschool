@@ -14,7 +14,7 @@
                                         <img src="{{ asset('assets/img/bill.png')}}" alt="" class=" img-fluid" />
                                     </div>
                                     <div>
-                                        <h4 class=" ">RS: 300,000</h4>
+                                        <h4 class=" ">RS: {{ $all->sum('total') }}</h4>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center">
@@ -22,7 +22,7 @@
                                         <h6 class="py-2">All Invoices</h6>
                                     </div>
                                     <div class="mx-auto mt-2">
-                                        <p>200</p>
+                                        <p>{{ $all->count() }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                                         <img src="{{ asset('assets/img/paid.png')}}" alt="" class=" img-fluid" />
                                     </div>
                                     <div>
-                                        <h4 class=" ">RS: 230,000</h4>
+                                        <h4 class=" ">RS: {{ $paid->sum('total') }}</h4>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center">
@@ -40,7 +40,7 @@
                                         <h6 class="py-2">Paid</h6>
                                     </div>
                                     <div class="mx-auto mt-2">
-                                        <p>150</p>
+                                        <p>{{ $paid->count() }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                         <img src="{{ asset('assets/img/paper.png')}}" alt="" class=" img-fluid" />
                                     </div>
                                     <div>
-                                        <h4 class=" ">RS: 70,000</h4>
+                                        <h4 class=" ">RS: {{ $unpaid->sum('total') }}</h4>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center">
@@ -58,7 +58,7 @@
                                         <h6 class="py-2">Unpaid</h6>
                                     </div>
                                     <div class="mx-auto mt-2">
-                                        <p>50</p>
+                                        <p>{{ $unpaid->count() }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                                             <h6 class="mt-2 mx-2">Search :</h6>
                                         </div>
                                         <div>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" wire:model="search" />
                                         </div>
                                     </div>
                                 </div>

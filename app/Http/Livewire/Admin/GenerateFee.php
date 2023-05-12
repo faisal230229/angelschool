@@ -19,9 +19,18 @@ class GenerateFee extends Component
     public $others;
     public $month = 1;
 
+    protected $rules = [
+        'student_id' => 'sometimes|nullable|exists:students,id',
+    ];
+
+    public function updated($fields)
+    {
+        $this->validateOnly($fields);
+    }
+
     public function generateFee()
     {
-        // $this->validate();
+        $this->validate();
 
         $total = $this->arrears + $this->admission_fee + $this->tution_fee + $this->stationary_fee + $this->paper_fund + $this->others;
         if ($this->student_id) {
@@ -53,7 +62,7 @@ class GenerateFee extends Component
             }
         }
 
-        dd('Students Fee Generated Successfully');
+        return redirect()->route('admin.feesList')->with('msg', 'Fees Generated Successfully');
     }
 
     public function render()

@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class AllFeesList extends Component
 {
+    public $search;
     public $receive;
     public $filter = 'unpaid';
 
@@ -26,7 +27,19 @@ class AllFeesList extends Component
 
     public function render()
     {
-        $fees = StudentFee::where('status', $this->filter)->get();
-        return view('livewire.admin.all-fees-list', compact('fees'));
+        $all = StudentFee::all();
+        $paid = StudentFee::where('status', 'paid')->get();
+        $unpaid = StudentFee::where('status', 'unpaid')->get();
+        $fees = StudentFee::select('student_fees.*')
+            ->join('students', 'students.id', '=', 'student_fees.student_id')
+            ->when(trim($this->search), function ($q) {
+                $search = '%' . trim($this->search) . '%';
+                return $q->where(function ($q) use ($search) {
+                    return $q->where('students.id', 'like', $search)->orwhere('students.name', 'like', $search);
+                });
+            })
+            ->where('status', $this->filter)
+            ->paginate(10);
+        return view('livewire.admin.all-fees-list', compact('fees', 'all', 'unpaid', 'paid'));
     }
 }
