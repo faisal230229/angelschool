@@ -18,7 +18,7 @@
                             <div class="row mx-2">
                                 <div class="col-12 d-flex justify-content-between align-items-center">
                                     <div>
-                                        <a href="{{ route('admin.studentPdf') }}"
+                                        <a href="{{ route('admin.teacherCardPdf') }}"
                                             class="btn btn-icon icon-left btn-outline-success d-flex align-items-center">
                                             <i class="material-icons mx-1">print</i>
                                             Print
@@ -54,7 +54,11 @@
                                             <td>{{ $student->id }}</td>
                                             <td>{{ $student->name }}</td>
                                             <td>{{ $student->father_name }}</td>
+<<<<<<< HEAD
                                             <td>{{ $student->class }}</td>
+=======
+                                            <td>{{ $student->class->name }}</td>
+>>>>>>> 86498aca77a292c9494f10d0c9956ca640404cb6
                                             <td>{{ $student->phone }}</td>
                                             <td>
                                                 <a href="{{ route('admin.studentProfile', ['id'=>$student->id]) }}"

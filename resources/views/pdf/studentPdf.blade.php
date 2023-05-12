@@ -10,6 +10,7 @@
 
     <title>Student List</title>
     <style>
+<<<<<<< HEAD
         h1 {
             text-align: center;
         }
@@ -23,16 +24,33 @@
             border-collapse: collapse;
         }
        
+=======
+        table,
+        td,
+        th {
+            border: 1px solid;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+>>>>>>> 86498aca77a292c9494f10d0c9956ca640404cb6
     </style>
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="">
         <img src="/public/assets/img/logo.png" alt="">
     </div>
     <h1>THE ANGELS SCHOOL SYSTEM KHAN GARH</h1>
     <h1 class="text-center">STUDENTS LIST</h1>
     <table style="width: 100%; border: 1px solid #000">
+=======
+    <h1>THE ANGELS SCHOOL SYSTEM STUDENTS LIST</h1>
+    <table>
+>>>>>>> 86498aca77a292c9494f10d0c9956ca640404cb6
         <thead>
             <tr>
                 <th>Student ID</th>
@@ -48,7 +66,7 @@
                 <td>{{ $student->id }}</td>
                 <td>{{ $student->name }}</td>
                 <td>{{ $student->father_name }}</td>
-                <td>{{ $student->class_id }}</td>
+                <td>{{ $student->class->name }}</td>
                 <td>{{ $student->phone }}</td>
 
             </tr>

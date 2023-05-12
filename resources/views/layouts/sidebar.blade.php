@@ -87,10 +87,10 @@
                         Management</span></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link" href="./allStudentFee.html">All Student Fee</a>
+                        <a class="nav-link" href="{{ route('admin.feesList') }}">All Student Fee</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./invoice.html"> Student Fee</a>
+                        <a class="nav-link" href="{{ route('admin.generateFee') }}">Generate Fee</a>
                     </li>
                 </ul>
             </li>
@@ -107,16 +107,6 @@
                 <a class=" " href="./announcement.html"><i data-feather="clipboard"></i><span>Announcement</span></a>
             </li>
 
-            <!----------------------------------- Autherization Management System -------------------------->
-
-            <li class="menu-header">Autherization</li>
-            <li class="dropdown">
-                <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                        data-feather="user-check"></i><span>Auth</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="./login.html">Login</a></li>
-                </ul>
-            </li>
         </ul>
     </aside>
 </div>

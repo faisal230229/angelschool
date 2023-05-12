@@ -33,4 +33,12 @@ class PdfController extends Controller
         $pdf = PDF::loadView('pdf.classesPdf');
         return $pdf->download('classesList.pdf');
     }
+
+    public function teacherCardPdf($id)
+    {
+        $data = User::find($id);
+        view()->share('data', $data);
+        $pdf = PDF::loadView('pdf.teacherCardPdf');
+        return $pdf->download('teacherCard.pdf');
+    }
 }
