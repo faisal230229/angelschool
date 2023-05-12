@@ -18,7 +18,7 @@
                             <div class="row mx-2">
                                 <div class="col-12 d-flex justify-content-between align-items-center">
                                     <div>
-                                        <a href="{{ route('admin.teacherCardPdf') }}"
+                                        <a href="{{ route('admin.studentPdf') }}"
                                             class="btn btn-icon icon-left btn-outline-success d-flex align-items-center">
                                             <i class="material-icons mx-1">print</i>
                                             Print

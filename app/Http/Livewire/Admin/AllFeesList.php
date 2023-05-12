@@ -4,12 +4,24 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\StudentFee;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class AllFeesList extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
     public $search;
     public $receive;
     public $filter = 'unpaid';
+
+    public function showToast($msg)
+    {
+        $this->dispatchBrowserEvent('timeAlert', [
+            'type' => 'success',
+            'message' => $msg,
+        ]);
+    }
 
     public function payFee($id)
     {

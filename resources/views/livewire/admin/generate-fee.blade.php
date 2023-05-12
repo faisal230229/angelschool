@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label>Arrears</label>
+                                        <label>Previous Arrears</label>
                                         <input type="number" class="form-control" wire:model='arrears' />
                                         @error('arrears') <span class="text-danger error">{{ $message }}</span>
                                         @enderror
@@ -105,28 +105,6 @@
                                 </button>
                             </div>
                         </form>
-
-                        <!-- Print & Share Buttons -->
-
-                        {{-- <div class="d-flex justify-content-end mx-4 mb-3">
-                            <div class="btn-student-id-card">
-                                <a href="./StudentIDCard.html"
-                                    class="btn btn-icon icon-left btn-light d-flex align-items-center gap-1"><i
-                                        class="fas fa-address-card"></i> Student ID
-                                    Card</a>
-                            </div>
-                            <a href="#"
-                                class="btn btn-icon icon-left btn-outline-success mx-3 d-flex align-items-center gap-1">
-                                <ion-icon name="print-outline" class="share-icon"></ion-icon>
-                                Print
-                            </a>
-
-                            <button type="button" class="btn btn-outline-danger d-flex align-items-center"
-                                data-toggle="modal" data-target="#basicModal">
-                                <ion-icon name="arrow-redo-outline" class="share-icon"></ion-icon>
-                                Share
-                            </button>
-                        </div> --}}
                     </div>
                 </div>
             </div>
