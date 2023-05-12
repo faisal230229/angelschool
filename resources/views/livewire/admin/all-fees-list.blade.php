@@ -1,4 +1,7 @@
 <div class="main-content">
+    @if (Session::has('msg'))
+    <p style="display:none" wire:init="showToast('{{ Session::get('msg') }}')"></p>
+    @endif
     <section class="section">
         <div class="section-body">
             <div class="row">
@@ -90,6 +93,7 @@
                                         <tr>
                                             <th>Student Id</th>
                                             <th>Name</th>
+                                            <th>Month</th>
                                             <th>Previous Arrears</th>
                                             <th class="text-center">Admission Fee</th>
                                             <th>Tution Fee</th>
@@ -110,6 +114,7 @@
                                         <tr>
                                             <td>{{ $fee->student->id }}</td>
                                             <td>{{ $fee->student->name }}</td>
+                                            <td>{{ DateTime::createFromFormat('!m', $fee->month)->format('F') }}</td>
                                             <td>{{ $fee->prev_arrears }}</td>
                                             <td>{{ $fee->admission_fee }}</td>
                                             <td>{{ $fee->tution_fee }}</td>
@@ -133,36 +138,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{-- <div class="d-flex justify-content-md-end">
-                                    <nav aria-label="Page navigation example mx-3">
-                                        <ul class="pagination">
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">Previous</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">1</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">2</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">3</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div> --}}
-                                <!-- Print & Share Buttons -->
-
-                                {{-- <div class="d-flex justify-content-end my-2">
-                                    <a href="#"
-                                        class="btn btn-icon icon-left btn-outline-success d-flex align-items-center gap-1">
-                                        <ion-icon name="print-outline" class="share-icon"></ion-icon>
-                                        Print
-                                    </a>
-                                </div> --}}
+                                {{$fees->links()}}
                             </div>
                         </div>
                     </div>
