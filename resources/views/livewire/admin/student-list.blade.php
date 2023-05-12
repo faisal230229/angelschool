@@ -54,7 +54,7 @@
                                             <td>{{ $student->id }}</td>
                                             <td>{{ $student->name }}</td>
                                             <td>{{ $student->father_name }}</td>
-                                            <td>{{ $student->class_id }}</td>
+                                            <td>{{ $student->class }}</td>
                                             <td>{{ $student->phone }}</td>
                                             <td>
                                                 <a href="{{ route('admin.studentProfile', ['id'=>$student->id]) }}"

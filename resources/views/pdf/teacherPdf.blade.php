@@ -8,15 +8,25 @@
     <title>Teacher List</title>
 
     <style>
-        td {
+            h1 {
             text-align: center;
+        }
+        td {
+            text-align: center;   
+        }
+        table,td,th {
+            border: 1px solid #000;
+        }
+        table {
+            border-collapse: collapse;
         }
     </style>
 </head>
 
 
 <body>
-    <h1>THE ANGELS SCHOOL SYSTEM TEACHERS LIST</h1>
+<h1>THE ANGELS SCHOOL SYSTEM KHAN GARH</h1>
+    <h1 class="text-center">TEACHERS LIST</h1>
     <table class="table table-striped table-hover" id="tableExport" style="width: 100%">
         <thead>
             <tr>
