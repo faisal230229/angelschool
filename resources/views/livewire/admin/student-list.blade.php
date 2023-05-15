@@ -54,11 +54,7 @@
                                             <td>{{ $student->id }}</td>
                                             <td>{{ $student->name }}</td>
                                             <td>{{ $student->father_name }}</td>
-<<<<<<< HEAD
-                                            <td>{{ $student->class }}</td>
-=======
                                             <td>{{ $student->class->name }}</td>
->>>>>>> 86498aca77a292c9494f10d0c9956ca640404cb6
                                             <td>{{ $student->phone }}</td>
                                             <td>
                                                 <a href="{{ route('admin.studentProfile', ['id'=>$student->id]) }}"
