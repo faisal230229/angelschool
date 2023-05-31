@@ -255,7 +255,7 @@
                                     <div class="row">
                                         <div class="col-4 col-md-4">
                                             <div class="teacher-pic m-4">
-                                                <img src="{{ $data->image }}" alt="" class="img-fluid">
+                                                <img src="{{ asset('$data->image') }}" alt="" class="img-fluid">
 
                                             </div>
                                             <div class="">

@@ -14,7 +14,7 @@
                                 <div class="author-box-name mt-2">
                                     <a href="#">{{ $teacher->name }}</a>
                                 </div>
-                                <div class="author-box-job">Principal</div>
+                                <div class="author-box-job">Teacher</div>
                             </div>
                             <div class="d-flex align-items-center justify-content-center">
                                 <a href="{{ route('admin.teacherCardPdf', ['id'=> $teacher->id]) }}"
@@ -64,61 +64,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="pt-3">Skills</h4>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled user-progress list-unstyled-border list-unstyled-noborder">
-                                <li class="media">
-                                    <div class="media-body">
-                                        <div class="media-title">MA. English</div>
-                                    </div>
-                                    <div class="media-progressbar p-t-10">
-                                        <div class="progress" data-height="6">
-                                            <div class="progress-bar bg-primary" data-width="70%"></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="media">
-                                    <div class="media-body">
-                                        <div class="media-title">B.Ed MSc</div>
-                                    </div>
-                                    <div class="media-progressbar p-t-10">
-                                        <div class="progress" data-height="6">
-                                            <div class="progress-bar bg-warning" data-width="80%"></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="media">
-                                    <div class="media-body">
-                                        <div class="media-title">MA. Islamiat</div>
-                                    </div>
-                                    <div class="media-progressbar p-t-10">
-                                        <div class="progress" data-height="6">
-                                            <div class="progress-bar bg-green" data-width="48%"></div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
                     <div class="card">
                         <div class="padding-20">
                             <ul class="nav nav-tabs" id="myTab2" role="tablist">
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link active" id="home-tab2" data-toggle="tab" href="#about" role="tab"
                                         aria-selected="true">About</a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#settings" role="tab"
-                                        aria-selected="false">Setting</a>
+                                    <a class="nav-link active" id="profile-tab2" data-toggle="tab" href="#settings"
+                                        role="tab" aria-selected="false">Setting</a>
                                 </li>
                             </ul>
                             <div class="tab-content tab-bordered" id="myTab3Content">
-                                <div class="tab-pane fade show active" id="about" role="tabpanel"
+                                {{-- <div class="tab-pane fade show active" id="about" role="tabpanel"
                                     aria-labelledby="home-tab2">
                                     <div class="row">
                                         <div class="col-md-3 col-6 b-r">
@@ -209,69 +170,35 @@
                                             and typesetting industry.
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="profile-tab2">
-                                    <form method="post" class="needs-validation">
+                                </div> --}}
+                                <div class="tab-pane fade show active" id="settings" role="tabpanel"
+                                    aria-labelledby="profile-tab2">
+                                    <form wire:submit.prevent="changePassword({{ $teacher->id }})">
+                                        @csrf
                                         <div class="card-header">
-                                            <h4>Edit Profile</h4>
+                                            <h4>Edit Password</h4>
                                         </div>
                                         <div class="card-body">
-                                            <div class="row">
-                                                <div class="form-group col-md-6 col-12">
-                                                    <label>First Name</label>
-                                                    <input type="text" class="form-control" value="Mian" />
-                                                    <div class="invalid-feedback">
-                                                        Please fill in the first name
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-6 col-12">
-                                                    <label>Last Name</label>
-                                                    <input type="text" class="form-control" value="Mughees" />
-                                                    <div class="invalid-feedback">
-                                                        Please fill in the last name
-                                                    </div>
-                                                </div>
+                                            <div class="form-group col-12">
+                                                <label>New Password</label>
+                                                <input type="password" class="form-control" wire:model="password" />
+                                                @error('password')
+                                                <p class="text-danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
-                                            <div class="row">
-                                                <div class="form-group col-md-7 col-12">
-                                                    <label>Email</label>
-                                                    <input type="email" class="form-control" value="test@example.com" />
-                                                    <div class="invalid-feedback">
-                                                        Please fill in the email
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-5 col-12">
-                                                    <label>Phone</label>
-                                                    <input type="tel" class="form-control" value="" />
-                                                </div>
+                                            <div class="form-group col-12">
+                                                <label>Confirm New Password</label>
+                                                <input type="password" class="form-control"
+                                                    wire:model="confirmPassword" />
+                                                @error('confirmPassword')
+                                                <p class="text-danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
-                                            <div class="row">
-                                                <div class="form-group col-12">
-                                                    <label>Bio</label>
-                                                    <textarea class="form-control summernote-simple">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatum alias molestias minus quod dignissimos.</textarea>
-                                                </div>
+                                            <div class="card-footer text-right">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Save
+                                                </button>
                                             </div>
-                                            <div class="row">
-                                                <div class="form-group mb-0 col-12">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" name="remember"
-                                                            class="custom-control-input" id="newsletter" />
-                                                        <label class="custom-control-label" for="newsletter">Subscribe
-                                                            to newsletter</label>
-                                                        <div class="text-muted form-text">
-                                                            You will get new information about
-                                                            products, offers and promotions
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer text-right">
-                                            <button class="btn btn-primary">
-                                                Save Changes
-                                            </button>
-                                        </div>
                                     </form>
                                 </div>
                             </div>

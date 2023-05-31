@@ -35,8 +35,8 @@
                                             </h6>
                                         </div>
                                     </div>
-                                    @if ($class->attendence()->where('status',
-                                    'PRESENT')->whereDate('created_at', \Carbon\Carbon::today())->count() > 0)
+                                    @if ($class->attendence()->whereDate('created_at', \Carbon\Carbon::today())->count()
+                                    > 0)
                                     <div class="row">
                                         <div class="col-7 col-md-4">
                                             <h6 class="text-danger">Present :</h6>

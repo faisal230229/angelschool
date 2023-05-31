@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label>Student Cnic</label>
+                    <label>Student CNIC/B-FORM</label>
                     <input type="text" class="form-control" wire:model='cnic' />
                     @error('cnic') <span class="text-danger error">{{ $message }}</span> @enderror
                   </div>
@@ -80,10 +80,22 @@
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <label>Address</label>
-                  <textarea class="form-control" wire:model='address'></textarea>
-                  @error('address') <span class="text-danger error">{{ $message }}</span> @enderror
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Father Occupation</label>
+                    <input type="text" class="form-control" wire:model='father_occupation' />
+                    @error('father_occupation') <span class="text-danger error">{{ $message }}</span> @enderror
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Address</label>
+                    <textarea class="form-control" wire:model='address'></textarea>
+                    @error('address') <span class="text-danger error">{{ $message }}</span> @enderror
+                  </div>
+                </div>
+
+                <div class="form-row d-flex align-items-center">
+                  <input type="checkbox" wire:model='checked' value="true" />
+                  <label class="m-0 p-0 ml-2">Same as Father</label>
                 </div>
 
                 <div class="form-row">

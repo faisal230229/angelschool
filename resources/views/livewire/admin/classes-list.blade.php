@@ -8,7 +8,7 @@
                 <div class="col-12">
                     <div class="card">
                         <h4 class="brand-name text-center py-3">
-                            Welcome to the ANGELS School System Students List
+                            Welcome to the ANGELS School System Classes List
                         </h4>
                         <div class="card-header">
                             <h4 class="py-3">All Classes</h4>
@@ -66,34 +66,7 @@
                                     </tbody>
                                 </table>
                                 {{ $classes->links() }}
-                                {{-- <div class="d-flex justify-content-md-end">
-                                    <nav aria-label="Page navigation example mx-3">
-                                        <ul class="pagination">
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">Previous</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">1</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">2</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">3</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div> --}}
-                                <div class="d-flex justify-content-end my-2">
-                                    <a href="#"
-                                        class="btn btn-icon icon-left btn-outline-success d-flex align-items-center">
-                                        <ion-icon name="print-outline" class="share-icon"></ion-icon>
-                                        Print
-                                    </a>
-                                </div>
+
                             </div>
                         </div>
                     </div>

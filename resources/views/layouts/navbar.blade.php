@@ -37,7 +37,7 @@
                 <img alt="image" src="{{ asset('assets/img/user.png') }}" class="user-img-radious-style" />
                 <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">
-                <div class="dropdown-title">Mian Mughees Bhatti</div>
+                <div class="dropdown-title">{{ auth()->user()->name }}</div>
                 <a href="profile.html" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>

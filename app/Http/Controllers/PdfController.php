@@ -14,6 +14,7 @@ class PdfController extends Controller
     {
         $data = Student::all();
         view()->share('data', $data);
+        Pdf::setOption(['isRemoteEnabled' => true]);
         $pdf = PDF::loadView('pdf.studentPdf');
         return $pdf->download('StudentList.pdf');
     }
@@ -38,6 +39,8 @@ class PdfController extends Controller
     {
         $data = User::find($id);
         view()->share('data', $data);
+        Pdf::setOption(['isRemoteEnabled' => true]);
+        Pdf::setOption(['enable_php' => true]);
         $pdf = PDF::loadView('pdf.teacherCardPdf');
         return $pdf->download('teacherCard.pdf');
     }

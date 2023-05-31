@@ -12,6 +12,8 @@ class AddStudent extends Component
 {
     use WithFileUploads;
 
+    public $checked = false;
+
     public $name;
     public $email = null;
     public $cnic;
@@ -24,6 +26,7 @@ class AddStudent extends Component
     public $mother_education;
     public $father_cnic;
     public $father_phone;
+    public $father_occupation;
     public $address;
     public $guardian_name;
     public $guardian_occupation;
@@ -49,6 +52,7 @@ class AddStudent extends Component
         'father_phone' => 'required|numeric|digits:11',
         'father_education' => 'required',
         'mother_education' => 'required',
+        'father_occupation' => 'required',
         'address' => 'required',
         'guardian_name' => 'required',
         'guardian_occupation' => 'required',
@@ -62,6 +66,23 @@ class AddStudent extends Component
     public function updated($fields)
     {
         $this->validateOnly($fields);
+    }
+
+    public function updatedChecked()
+    {
+        if ($this->checked) {
+            $this->guardian_name = $this->father_name;
+            $this->guardian_occupation = $this->father_occupation;
+            $this->guardian_cnic = $this->father_cnic;
+            $this->guardian_phone = $this->father_phone;
+            $this->guardian_address = $this->address;
+        } else {
+            $this->guardian_name = '';
+            $this->guardian_occupation = '';
+            $this->guardian_cnic = '';
+            $this->guardian_phone = '';
+            $this->guardian_address = '';
+        }
     }
 
     public function clear()
@@ -78,6 +99,7 @@ class AddStudent extends Component
         $this->mother_education = '';
         $this->father_cnic = '';
         $this->father_phone = '';
+        $this->father_occupation = '';
         $this->address = '';
         $this->guardian_name = '';
         $this->guardian_occupation = '';
@@ -94,7 +116,6 @@ class AddStudent extends Component
     public function addStudent()
     {
         $this->validate();
-        // dd("hello");
 
         $student = new Student();
         $student->name = $this->name;
@@ -113,6 +134,7 @@ class AddStudent extends Component
         $student->mother_education = $this->mother_education;
         $student->father_cnic = $this->father_cnic;
         $student->father_phone = $this->father_phone;
+        $student->father_occupation = $this->father_occupation;
         $student->address = $this->address;
         $student->guardian_name = $this->guardian_name;
         $student->guardian_occupation = $this->guardian_occupation;

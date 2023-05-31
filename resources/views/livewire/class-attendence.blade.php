@@ -49,7 +49,7 @@
                                                 <th>ID</th>
                                                 <th>Name</th>
                                                 <th>Father Name</th>
-                                                <th>Attendence Percentage</th>
+                                                <th>Total Absents</th>
                                                 <th></th>
                                                 <th>Attendence Status</th>
                                             </tr>
@@ -60,7 +60,7 @@
                                                 <td>{{ $student->id }}</td>
                                                 <td>{{ $student->name }}</td>
                                                 <td>{{ $student->father_name }}</td>
-                                                <td>75%</td>
+                                                <td>{{ $student->totalAbsents->count() }}</td>
                                                 <td></td>
                                                 <td>
                                                     <select class="form-control btn-success" style="width: max-content"

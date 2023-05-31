@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('mother_education');
             $table->string('father_cnic');
             $table->string('father_phone');
+            $table->string('father_occupation');
             $table->text('address');
             $table->string('guardian_name');
             $table->string('guardian_occupation');
@@ -35,7 +36,7 @@ return new class extends Migration
             $table->enum('nationality', ['Pakistani', 'Non Pakistani']);
             $table->enum('religion', ['Islam', 'Hindu', 'Cristan', 'Other']);
             $table->string('image');
-            $table->text('last_school');
+            $table->text('last_school')->nullable();
             $table->timestamps();
         });
     }

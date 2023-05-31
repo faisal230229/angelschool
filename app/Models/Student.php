@@ -13,4 +13,9 @@ class Student extends Model
     {
         return $this->belongsTo(SchoolClass::class, 'class_id');
     }
+
+    public function totalAbsents()
+    {
+        return $this->hasMany(StudentAttendence::class, 'student_id')->where('status', 'ABSENT');
+    }
 }
