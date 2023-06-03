@@ -19,8 +19,7 @@
             <!------------------------------------- Student Management System ------------------------------>
 
             <li class="dropdown">
-                <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                        data-feather="user"></i><span>Students</span></a>
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="users"></i><span>Students</span></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="nav-link" href="{{ route('admin.studentList') }}">Student List</a>
@@ -49,8 +48,7 @@
             <!------------------------------------- Classes Management System ------------------------------>
 
             <li class="dropdown">
-                <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                        data-feather="user"></i><span>Classes</span></a>
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="book-open"></i><span>Classes</span></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="nav-link" href="{{ route('admin.classesList') }}">Classes List</a>
@@ -65,7 +63,7 @@
 
             <li class="menu-header">Attendence</li>
             <li class="dropdown">
-                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="users"></i><span>Student
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i><span>Student
                         Attendence</span></a>
                 <ul class="dropdown-menu">
                     <li>
