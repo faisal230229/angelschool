@@ -40,15 +40,18 @@ class TeacherEdit extends Component
         $this->religion = $teacher->religion;
     }
 
-    protected $rules = [
-        'name' => 'required',
-        'email' => 'required|email|unique:users',
-        'cnic' => 'required|numeric|digits:13',
-        'dob' => 'required',
-        'phone' => 'required|numeric|digits:11',
-        'qualification' => 'required',
-        'address' => 'required',
-    ];
+    protected function rules()
+    {
+        return [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $this->teacher_id,
+            'cnic' => 'required|numeric|digits:13',
+            'dob' => 'required',
+            'phone' => 'required|numeric|digits:11',
+            'qualification' => 'required',
+            'address' => 'required',
+        ];
+    }
 
     public function updated($fields)
     {

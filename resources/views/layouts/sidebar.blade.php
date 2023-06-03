@@ -19,7 +19,8 @@
             <!------------------------------------- Student Management System ------------------------------>
 
             <li class="dropdown">
-                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="users"></i><span>Students</span></a>
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                        data-feather="users"></i><span>Students</span></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="nav-link" href="{{ route('admin.studentList') }}">Student List</a>
@@ -48,7 +49,8 @@
             <!------------------------------------- Classes Management System ------------------------------>
 
             <li class="dropdown">
-                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="book-open"></i><span>Classes</span></a>
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                        data-feather="book-open"></i><span>Classes</span></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="nav-link" href="{{ route('admin.classesList') }}">Classes List</a>
@@ -99,6 +101,12 @@
             <li class="dropdown">
                 <a class=" " href="{{ route('admin.announcement') }}"><i
                         data-feather="clipboard"></i><span>Announcement</span></a>
+            </li>
+
+            <li class="menu-header">Certificate</li>
+            <li class="dropdown">
+                <a class=" " href="{{ route('admin.certificate') }}"><i
+                        data-feather="clipboard"></i><span>Certificate</span></a>
             </li>
 
         </ul>

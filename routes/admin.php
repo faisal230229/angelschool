@@ -20,6 +20,7 @@ use App\Http\Livewire\Admin\TeacherList;
 use App\Http\Livewire\Admin\Timetable;
 use App\Http\Livewire\Admin\TimetableEdit;
 use App\Http\Livewire\AdminAnnouncement;
+use App\Http\Livewire\GenerateCertificate;
 use Illuminate\Support\Facades\Route;
 
 
@@ -56,4 +57,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/teacherCardPdf/{id}', [PdfController::class, 'teacherCardPdf'])->name('admin.teacherCardPdf');
 
     Route::get('/announcement', AdminAnnouncement::class)->name('admin.announcement');
+
+    Route::get('/generateCertificate', GenerateCertificate::class)->name('admin.certificate');
 });
