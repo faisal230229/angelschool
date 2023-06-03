@@ -98,13 +98,9 @@
             <!------------------------------------- Fee Management System ---------------------------------->
 
             <li class="menu-header">Announcement</li>
-
-            <!-- <li class="dropdown">
-  <a href="./announcement.html" class=" nav-link has-dropdown"><i data-feather="clipboard"></i><span> 
-      Announcement</span></a>
-</li> -->
             <li class="dropdown">
-                <a class=" " href="./announcement.html"><i data-feather="clipboard"></i><span>Announcement</span></a>
+                <a class=" " href="{{ route('admin.announcement') }}"><i
+                        data-feather="clipboard"></i><span>Announcement</span></a>
             </li>
 
         </ul>

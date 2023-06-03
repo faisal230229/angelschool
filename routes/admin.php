@@ -19,6 +19,7 @@ use App\Http\Livewire\Admin\TeacherEdit;
 use App\Http\Livewire\Admin\TeacherList;
 use App\Http\Livewire\Admin\Timetable;
 use App\Http\Livewire\Admin\TimetableEdit;
+use App\Http\Livewire\AdminAnnouncement;
 use Illuminate\Support\Facades\Route;
 
 
@@ -53,4 +54,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/teacherPdf', [PdfController::class, 'teacherPdf'])->name('admin.teacherPdf');
     Route::get('/classesPdf', [PdfController::class, 'classesPdf'])->name('admin.classesPdf');
     Route::get('/teacherCardPdf/{id}', [PdfController::class, 'teacherCardPdf'])->name('admin.teacherCardPdf');
+
+    Route::get('/announcement', AdminAnnouncement::class)->name('admin.announcement');
 });
