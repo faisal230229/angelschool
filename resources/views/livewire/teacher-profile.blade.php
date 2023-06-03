@@ -148,7 +148,7 @@
                                                 <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                            <div class="card-footer text-right">
+                                            <div class="card-footer text-right ">
                                                 <button type="submit" class="btn btn-primary">
                                                     Save
                                                 </button>

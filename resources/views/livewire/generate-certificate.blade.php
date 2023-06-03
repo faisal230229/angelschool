@@ -9,7 +9,7 @@
                             Form
                         </h4>
                         <div class="card-header">
-                            <h4 class="pt-3">Add Class</h4>
+                            <h4 class="pt-3">Student Certificate</h4>
                         </div>
                         <form wire:submit.prevent="generateCertificate">
                             <div class="card-body">

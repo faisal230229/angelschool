@@ -20,7 +20,7 @@
                                     <div>
                                         <a href="{{ route('admin.studentPdf') }}"
                                             class="btn btn-icon icon-left btn-outline-success d-flex align-items-center">
-                                            <i class="material-icons mx-1">print</i>
+                                            <i data-feather="printer" class="mx-1"></i>
                                             Print
                                         </a>
                                     </div>
