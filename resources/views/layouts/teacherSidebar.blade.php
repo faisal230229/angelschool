@@ -25,11 +25,11 @@
             </li>
 
             <li class="dropdown">
-                <a href="{{ route('admin.timetable') }}"><i data-feather="grid"></i><span>Timetable</span></a>
+                <a href="{{ route('teacherTimetable') }}"><i data-feather="grid"></i><span>Timetable</span></a>
             </li>
 
             <li class="dropdown">
-                <a href="{{ route('admin.timetable') }}"><i data-feather="user"></i><span>Profile</span></a>
+                <a href="{{ route('profile') }}"><i data-feather="user"></i><span>Profile</span></a>
             </li>
 
 

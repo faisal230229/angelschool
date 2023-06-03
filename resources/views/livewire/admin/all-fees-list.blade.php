@@ -29,13 +29,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded mx-md-4 my-md-0 my-3">
+                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded my-md-0 my-3">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <img src="{{ asset('assets/img/paid.png')}}" alt="" class=" img-fluid" />
                                     </div>
                                     <div>
-                                        <h4 class=" ">RS: {{ $paid->sum('total') }}</h4>
+                                        <h4 class=" ">RS: {{ $paid->sum('received') }}</h4>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center">
@@ -62,6 +62,24 @@
                                     </div>
                                     <div class="mx-auto mt-2">
                                         <p>{{ $unpaid->count() }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <img src="{{ asset('assets/img/paper.png')}}" alt="" class=" img-fluid" />
+                                    </div>
+                                    <div>
+                                        <h4 class=" ">RS: {{ $paid->sum('arrears') }}</h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <h6 class="py-2">Arrears</h6>
+                                    </div>
+                                    <div class="mx-auto mt-2">
+                                        <p>{{ $paid->where('arrears', '!=', 0)->count() }}</p>
                                     </div>
                                 </div>
                             </div>
