@@ -11,24 +11,26 @@
                         <div class="card-header">
                             <h4 class="pt-3">Make Announcement</h4>
                         </div>
-                        <form wire:submit.prevent="addClass">
+                        <form wire:submit.prevent="makeAnnouncement">
                             <div class="card-body">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <input type="checkbox" value="teachers" wire:model='checkbox' />
+                                        <input type="checkbox" value="true" wire:model='teachers' />
                                         <label>Teachers</label>
                                         @error('name') <span class="text-danger error">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <input type="checkbox" value="students" wire:model='checkbox' />
+                                        <input type="checkbox" value="true" wire:model='students' />
                                         <label>Studens</label>
                                         @error('name') <span class="text-danger error">{{ $message }}</span> @enderror
                                     </div>
+                                    @if ($students)
                                     <div class="form-group col-md-6">
                                         <label>Select Classes</label>
-                                        <select class="form-control" wire:model="class" multiple="" data-height="100%">
+                                        <select class="form-control" wire:model="class" multiple=""
+                                            style="height: 40px">
                                             @foreach ($classes as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
                                             @endforeach
@@ -36,12 +38,12 @@
                                         @error('class') <span class="text-danger error">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    @endif
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-12">
                                         <label>Message</label>
-                                        <textarea class="form-control" cols="30" rows="10"
-                                            wire:model='message'></textarea>
+                                        <textarea class="form-control w-full" rows="15" wire:model='message'></textarea>
                                         @error('name') <span class="text-danger error">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
