@@ -11,7 +11,7 @@
                             <h4 class="py-3">All Students</h4>
                         </div>
                         <div class="row mx-4 py-3">
-                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded">
+                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded border border-white">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <img src="{{ asset('assets/img/bill.png')}}" alt="" class=" img-fluid" />
@@ -29,7 +29,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded my-md-0 my-3">
+                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded my-md-0 my-3  border border-white">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <img src="{{ asset('assets/img/paid.png')}}" alt="" class=" img-fluid" />
@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded">
+                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded  border border-white">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <img src="{{ asset('assets/img/paper.png')}}" alt="" class=" img-fluid" />
@@ -65,10 +65,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded">
+                            <div class="col-12 col-md-3 bg-indigo pt-4 rounded  border border-white">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <img src="{{ asset('assets/img/paper.png')}}" alt="" class=" img-fluid" />
+                                        <img src="{{ asset('assets/img/arrears.png')}}" alt="" class=" img-fluid" />
                                     </div>
                                     <div>
                                         <h4 class=" ">RS: {{ $paid->sum('arrears') }}</h4>
