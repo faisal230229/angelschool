@@ -44,4 +44,20 @@ class PdfController extends Controller
         $pdf = PDF::loadView('pdf.teacherCardPdf');
         return $pdf->download('teacherCard.pdf');
     }
+
+    public function certificatePdf($content)
+    {
+        $data = [
+            'content' => $content,
+            'images' => [
+                "baby" => public_path('assets/img/baby.png'),
+                "logo" => public_path('assets/img/logo.png'),
+            ],
+            'colors' => [
+                'primary' => 'rgb(206, 153, 73)',
+            ],
+        ];
+        $pdf = PDF::loadView('pdf.certificatePdf', $data);
+        return $pdf->download('certificatePdf.pdf');
+    }
 }
