@@ -19,7 +19,7 @@
                             <div class="d-flex align-items-center justify-content-center">
                                 <a href="{{ route('admin.teacherCardPdf', ['id'=> $teacher->id]) }}"
                                     class="btn btn-icon icon-left btn-outline-success d-flex align-items-center">
-                                    <i class="material-icons mx-1">print</i>
+                                    <i class="fas fa-id-card"></i>
                                     Employee Card
                                 </a>
                             </div>
