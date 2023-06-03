@@ -16,17 +16,6 @@
                                 </div>
                                 <div class="author-box-job">Student</div>
                             </div>
-                            <div class="text-center">
-                                <div class="author-box-description">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. Pariatur voluptatum alias molestias minus quod
-                                        dignissimos.
-                                    </p>
-                                </div>
-
-                                <div class="w-100 d-sm-none"></div>
-                            </div>
                         </div>
                     </div>
                     <div class="card">
