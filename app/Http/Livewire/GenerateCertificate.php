@@ -11,15 +11,16 @@ class GenerateCertificate extends Component
 
     public function generateCertificate()
     {
-        $template_id = "7e577b23828ac440";
-        $response = Http::withHeaders([
-            'X-API-KEY' => env("PDF_KEY"),
-        ])->post('https://rest.apitemplate.io/v2/create-pdf?template_id=' . $template_id, [
-            'content' => $this->content,
-        ]);
+        // $template_id = "7e577b23828ac440";
+        // $response = Http::withHeaders([
+        //     'X-API-KEY' => env("PDF_KEY"),
+        // ])->post('https://rest.apitemplate.io/v2/create-pdf?template_id=' . $template_id, [
+        //     'content' => $this->content,
+        // ]);
 
 
-        return redirect()->to($response->json("download_url"));
+        // return redirect()->to($response->json("download_url"));
+        return redirect()->route('admin.certificatePdf', ['content' => $this->content]);
     }
 
     public function render()
